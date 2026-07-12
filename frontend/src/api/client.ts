@@ -1,10 +1,12 @@
 import axios from 'axios';
 
+// In local dev, '/api' is proxied to the backend by Vite (see vite.config.js).
+// In production (e.g. Vercel), set VITE_API_URL to the deployed backend's full URL,
+// e.g. https://newtech-g2c4.onrender.com/api
 const baseURL = import.meta.env.VITE_API_URL || '/api';
 
 const client = axios.create({
   baseURL
-});
 });
 
 client.interceptors.request.use((config) => {
